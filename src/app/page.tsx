@@ -45,16 +45,16 @@ export default function Home() {
                 vive la música
               </h1>
               <p className="text-lg font-roboto-regular text-white xl:max-w-lg lg:max-w-96 md:max-w-72 max-w-none leading-relaxed text-left hidden md:block">
-                Representamos a artistas de alto impacto y los conectamos con
-                escenarios clave. Elevamos carreras y creamos experiencias que
-                dejan huella.
+                Nuestra especialidad es entregar una solución llaves en mano
+                para necesidades de producción, marketing, hospitalidad y
+                contratación de artistas.
               </p>
             </div>
           </HeroContainer>
           <p className="text-white text-lg leading-relaxed text-left block md:hidden  relative z-30 -mt-20">
-            Representamos a artistas de alto impacto y los conectamos con
-            escenarios clave. Elevamos carreras y creamos experiencias que dejan
-            huella.
+            Nuestra especialidad es entregar una solución llaves en mano para
+            necesidades de producción, marketing, hospitalidad y contratación de
+            artistas.
           </p>
         </section>
 
@@ -67,34 +67,34 @@ export default function Home() {
           <div className="stats-bar-content bg-gradient-to-r from-slate-700/30 via-slate-600/30 to-slate-600/30 backdrop-blur-sm rounded-3xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 border border-slate-600 max-w-7xl mx-auto w-full">
             <div className="stats-bar-item text-center">
               <div className="text-4xl font-roboto-black text-white mb-2">
-                500+
+                +40
               </div>
               <div className="text-white font-roboto-regular">
-                Conciertos y eventos privados
+                Carreras artísticas desarrolladas
               </div>
             </div>
             <div className="stats-bar-item text-center">
               <div className="text-4xl font-roboto-black text-white mb-2">
-                15+
+                +1500
               </div>
               <div className="text-white font-roboto-regular">
-                Años de Experiencia
+                Eventos con presencia
               </div>
             </div>
             <div className="stats-bar-item text-center">
               <div className="text-4xl font-roboto-black text-white mb-2">
-                80+
+                +180
               </div>
               <div className="text-white font-roboto-regular">
-                Ciudades Alcanzadas
+                Eventos masivos organizados
               </div>
             </div>
             <div className="stats-bar-item text-center">
               <div className="text-4xl font-roboto-black text-white mb-2">
-                100+
+                +19M
               </div>
               <div className="text-white font-roboto-regular">
-                Artistas Representados
+                Espectadores alcanzados
               </div>
             </div>
           </div>
@@ -119,17 +119,20 @@ export default function Home() {
                 <div className="text-xl text-white md:mb-4 mb-0 font-roboto">
                   NOSOTROS
                 </div>
-                <h2 className="lg:text-7xl md:text-6xl text-5xl font-roboto-black text-white mb-6 heading-letterspacing-lg">
-                  traemos íconos a tu escenario
+                <h2 className="md:text-6xl text-5xl font-roboto-black text-white mb-6 heading-letterspacing-lg">
+                  descubre la experiencia boutique
                 </h2>
                 <p className="text-white text-lg leading-relaxed font-roboto-regular">
-                  Durante más de 20 años hemos trabajado con artistas, marcas y
-                  gobiernos, nacionales e internacionales, para posicionarnos
-                  como una compañía con un &ldquo;Boutique Client
-                  Experience&rdquo;, por lo cual damos seguimiento continuo,
-                  eficiente y personalizado a todos nuestros clientes.
+                  Más de 30 años colaborando con artistas, marcas y gobiernos
+                  nacionales e internacionales posicionándonos como una compañía
+                  con un Boutique Client Experiencia, dando seguimiento
+                  continuo, eficiente y personalizado a todos nuestros clientes.
                 </p>
-                <ScrollToContact />
+                <a href="mailto:info@blu2.mx">
+                  <button className="bg-transparent border border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-black transition-colors backdrop-blur-sm font-roboto-black uppercase tracking-wider mt-6">
+                    Contáctanos
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -177,10 +180,10 @@ export default function Home() {
             </div>
             <div className="absolute md:bottom-0 bottom-0 left-0 max-w-xl bg-black rounded-tr-4xl sm:p-8 p-4 px-4">
               <p className="text-white text-lg leading-relaxed font-roboto-regular mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Con casi 50 años de trayectoria, el ícono regresó a los
+                escenarios con Importante Tour. La exitosa gira que produjimos
+                para llevarla por México, Latinoamérica y Estados Unidos con más
+                de 75 shows.
               </p>
               <Link
                 className="text-white font-roboto-bold uppercase tracking-widest flex items-center gap-2 hover:text-primary transition-colors border-b border-white hover:border-primary w-fit"
@@ -253,10 +256,11 @@ export default function Home() {
             </div>
             <div className="absolute md:bottom-0 bottom-0 md:right-0 md:left-auto right-0 left-0 max-w-xl bg-black md:rounded-tr-none rounded-tr-4xl md:rounded-tl-4xl rounded-tl-none md:p-8 p-4 px-4">
               <p className="text-white text-lg leading-relaxed font-roboto-regular mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Somos la agencia de management y ventas de uno de los grupos más
+                queridos y representativos del pop en español. Tras más de 200
+                shows nacionales e internacionales con Pandora en Inesperado
+                Tour cierran este capítulo para iniciar la celebración de sus 40
+                años de carrera con un nuevo disco y una gira internacional.
               </p>
               <Link
                 className="text-white font-roboto-bold uppercase tracking-widest flex items-center gap-2 hover:text-primary transition-colors border-b border-white hover:border-primary w-fit"
@@ -297,7 +301,7 @@ export default function Home() {
                 SERVICIOS
               </div>
               <h2 className="lg:text-7xl md:text-6xl text-5xl font-roboto-black text-white mb-6 heading-letterspacing-lg">
-                que ofrecemos
+                qué hacemos
               </h2>
               <ScrollToContact />
               {/* Grid of services */}
@@ -313,12 +317,11 @@ export default function Home() {
                       />
                     </div>
                     <h3 className="text-xl font-roboto-black mb-2">
-                      Producción y logística
+                      Producción y logística de eventos
                     </h3>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      Del festival más grande al congreso más exigente, hacemos
+                      realidad eventos de cualquier escala.
                     </p>
                   </div>
                 </div>
@@ -333,12 +336,11 @@ export default function Home() {
                       />
                     </div>
                     <h3 className="text-xl font-roboto-black mb-2">
-                      Contratación de Talento
+                      Booking y Management
                     </h3>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      Conectamos e impulsamos el talento con estrategia, visión
+                      y las oportunidades adecuadas para crecer.
                     </p>
                   </div>
                 </div>
@@ -356,9 +358,8 @@ export default function Home() {
                       Hospitality
                     </h3>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      Creamos experiencias de bienvenida que hacen sentir a cada
+                      artista y cliente como en casa.
                     </p>
                   </div>
                 </div>
@@ -373,12 +374,10 @@ export default function Home() {
                       />
                     </div>
                     <h3 className="text-xl font-roboto-black mb-2">
-                      Proyectos a la Medida
+                      Propuesta creativa
                     </h3>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      Transformamos ideas en conceptos únicos que dejan huella.
                     </p>
                   </div>
                 </div>
@@ -413,7 +412,7 @@ export default function Home() {
 
               {/* Right Side - Contact Information */}
               <div className="grid grid-cols-2 gap-8 h-fit">
-                {/* Address */}
+                {/* Dirección */}
                 <div className="flex items-start gap-4 h-fit">
                   <div className="w-6 h-6 mt-1">
                     <Icon
@@ -423,35 +422,32 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-lg font-roboto-black text-white mb-2">
-                      Address
+                      Dirección
                     </h3>
                     <div className="text-white font-roboto-regular space-y-1 text-sm">
-                      <p>México City</p>
-                      <p>25 Reforma Avenue, Centro,</p>
-                      <p>México City, 06000</p>
+                      <p>Oaxaca #96 int. 103</p>
+                      <p>Roma Norte, CDMX</p>
+                      <p>C.P. 06700</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Phone */}
+                {/* Teléfono */}
                 <div className="flex items-start gap-4 h-fit">
                   <div className="w-6 h-6 mt-1">
                     <Icon icon="mdi:phone" className="text-white text-2xl" />
                   </div>
                   <div>
                     <h3 className="text-lg font-roboto-black text-white mb-2">
-                      Phone
+                      Teléfono
                     </h3>
-                    <a
-                      href="tel:+525512345678"
-                      className="text-white font-roboto-regular hover:text-primary transition-colors text-sm"
-                    >
-                      +52 55 1234 5678
-                    </a>
+                    <span className="text-white font-roboto-regular text-sm">
+                      Próximamente
+                    </span>
                   </div>
                 </div>
 
-                {/* Email */}
+                {/* Mail */}
                 <div className="flex items-start gap-4 h-fit">
                   <div className="w-6 h-6 mt-1">
                     <Icon icon="mdi:email" className="text-white text-2xl" />
@@ -461,48 +457,57 @@ export default function Home() {
                       Mail
                     </h3>
                     <a
-                      href="mailto:hello@blu2.com"
+                      href="mailto:info@blu2.mx"
                       className="text-white font-roboto-regular hover:text-primary transition-colors text-sm"
                     >
-                      hello@blu2.com
+                      info@blu2.mx
                     </a>
                   </div>
                 </div>
 
-                {/* Follow Us */}
+                {/* Síguenos */}
                 <div className="flex items-start gap-4 h-fit">
                   <div className="w-6 h-6 mt-1">
                     <Icon icon="mdi:thumb-up" className="text-white text-2xl" />
                   </div>
                   <div>
                     <h3 className="text-lg font-roboto-black text-white mb-2">
-                      Follow Us
+                      Síguenos
                     </h3>
                     <div className="flex gap-3">
                       <a
-                        href="#"
-                        className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                      >
-                        <Icon
-                          icon="mdi:linkedin"
-                          className="text-white text-sm"
-                        />
-                      </a>
-                      <a
-                        href="#"
-                        className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                      >
-                        <Icon
-                          icon="mdi:twitter"
-                          className="text-white text-sm"
-                        />
-                      </a>
-                      <a
-                        href="#"
+                        href="https://www.instagram.com/blu2entretenimiento/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
                         className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
                       >
                         <Icon
                           icon="mdi:instagram"
+                          className="text-white text-sm"
+                        />
+                      </a>
+                      <a
+                        href="https://www.facebook.com/Blu2EG"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Facebook"
+                        className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                      >
+                        <Icon
+                          icon="mdi:facebook"
+                          className="text-white text-sm"
+                        />
+                      </a>
+                      <a
+                        href="https://x.com/blu2mx"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="X (Twitter)"
+                        className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                      >
+                        <Icon
+                          icon="simple-icons:x"
                           className="text-white text-sm"
                         />
                       </a>

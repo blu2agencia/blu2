@@ -3,35 +3,12 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
-import gsap from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-
-// Register GSAP plugins
-gsap.registerPlugin(ScrollToPlugin);
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTalentoDropdownOpen, setIsTalentoDropdownOpen] = useState(false);
-  const pathname = usePathname();
-  const isHomepage = pathname === "/";
-
-  const handleContactClick = () => {
-    if (isHomepage) {
-      // If on homepage, scroll to contact section with GSAP
-      const contactSection = document.getElementById("contact");
-      if (contactSection) {
-        gsap.to(window, {
-          duration: 1.5,
-          scrollTo: { y: contactSection, offsetY: 80 },
-          ease: "power3.inOut",
-        });
-      }
-    }
-    // If not on homepage, the Link will handle navigation to /#contact
-  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,21 +93,12 @@ export default function Navigation() {
           </div>
 
           <div className="hidden md:block">
-            {isHomepage ? (
-              <button
-                onClick={handleContactClick}
-                className="bg-transparent border border-white text-white px-6 py-2 rounded-xl hover:bg-white hover:text-black transition-colors backdrop-blur-sm font-roboto-black text-xs uppercase tracking-wider"
-              >
-                Contáctanos
-              </button>
-            ) : (
-              <Link
-                href="/#contact"
-                className="bg-transparent border border-white text-white px-6 py-2 rounded-xl hover:bg-white hover:text-black transition-colors backdrop-blur-sm font-roboto-black text-xs uppercase tracking-wider inline-block"
-              >
-                Contáctanos
-              </Link>
-            )}
+            <a
+              href="mailto:info@blu2.mx"
+              className="bg-transparent border border-white text-white px-6 py-2 rounded-xl hover:bg-white hover:text-black transition-colors backdrop-blur-sm font-roboto-black text-xs uppercase tracking-wider inline-block"
+            >
+              Contáctanos
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -223,24 +191,13 @@ export default function Navigation() {
           </a>
 
           <div className="pt-8">
-            {isHomepage ? (
-              <button
-                onClick={() => {
-                  handleContactClick();
-                  closeMobileMenu();
-                }}
-                className="bg-transparent border border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-black transition-colors backdrop-blur-sm font-roboto-black uppercase tracking-wider"
-              >
-                Contáctanos
-              </button>
-            ) : (
-              <Link
-                href="/#contact"
-                className="bg-transparent border border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-black transition-colors backdrop-blur-sm font-roboto-black uppercase tracking-wider inline-block"
-              >
-                Contáctanos
-              </Link>
-            )}
+            <a
+              href="mailto:info@blu2.mx"
+              onClick={closeMobileMenu}
+              className="bg-transparent border border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-black transition-colors backdrop-blur-sm font-roboto-black uppercase tracking-wider inline-block"
+            >
+              Contáctanos
+            </a>
           </div>
         </div>
 

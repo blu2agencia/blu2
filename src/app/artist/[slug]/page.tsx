@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { getArtistBySlug, getAllArtists } from "@/data/artists";
 import { notFound } from "next/navigation";
 import ArtistAnimations from "@/components/ArtistAnimations";
+import { Icon } from "@iconify/react";
 
 interface ArtistPageProps {
   params: Promise<{
@@ -83,8 +83,8 @@ export default async function ArtistPage({ params }: ArtistPageProps) {
             <div className="grid md:grid-cols-2 gap-12 items-end">
               <div className="artist-about-image order-2 md:order-1 bg-primary md:h-[600px] h-[320px] rounded-4xl overflow-hidden">
                 <Image
-                  src="/images/about-us.jpg"
-                  alt="About Us"
+                  src={artist.aboutImage ?? "/images/about-us.jpg"}
+                  alt={`Sobre ${artist.name}`}
                   className="w-full h-full object-cover relative!"
                   fill
                 />
@@ -99,12 +99,25 @@ export default async function ArtistPage({ params }: ArtistPageProps) {
                 <p className="text-white text-lg leading-relaxed font-roboto-regular">
                   {artist.aboutText}
                 </p>
-                <Link
-                  href="/#contact"
-                  className="bg-transparent border border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-black transition-colors backdrop-blur-sm font-roboto-black uppercase tracking-wider mt-6 inline-block"
-                >
-                  Contáctanos
-                </Link>
+                <div className="flex flex-wrap gap-4 mt-6">
+                  <a
+                    href="mailto:info@blu2.mx"
+                    className="bg-transparent border border-white text-white px-8 py-4 rounded-xl hover:bg-white hover:text-black transition-colors backdrop-blur-sm font-roboto-black uppercase tracking-wider inline-block"
+                  >
+                    Contáctanos
+                  </a>
+                  {artist.websiteUrl && (
+                    <a
+                      href={artist.websiteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-white text-black px-8 py-4 rounded-xl hover:bg-transparent hover:text-white hover:border-white border border-white transition-colors backdrop-blur-sm font-roboto-black uppercase tracking-wider inline-flex items-center gap-2"
+                    >
+                      Sitio oficial
+                      <Icon icon="mdi:open-in-new" className="w-4 h-4" />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>

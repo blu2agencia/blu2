@@ -7,6 +7,8 @@ export interface Artist {
   desktopImage: string;
   mobileImage: string;
   slug: string;
+  websiteUrl?: string;
+  aboutImage?: string;
 }
 
 export const artists: Artist[] = [
@@ -14,25 +16,28 @@ export const artists: Artist[] = [
     id: "miguel-bose",
     name: "Miguel Bosé",
     introText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Con casi 50 años de trayectoria, el ícono regresó a los escenarios con Importante Tour. La exitosa gira que produjimos para llevarla por México, Latinoamérica y Estados Unidos con más de 75 shows.",
     aboutHeading: "Sobre Miguel Bosé",
     aboutText:
-      "Miguel Bosé es un reconocido artista con una carrera que abarca décadas en la música y el entretenimiento. Su talento único y carisma han cautivado a audiencias de todo el mundo, convirtiéndolo en una figura icónica de la cultura hispana.",
+      "Uno de los artistas más emblemáticos del pop en español vendiendo más de 30 millones de discos  así como 70 sencillos que se han colocado en los primeros lugares de las listas de América Latina y Europa. Ganador del Latin Grammy, Premios Onda, Billboard Latino,  World Music Awards, Premio Tu Mundo, Persona del año de los Latin Grammy, Global Gift Philanthropist por mencionar solo algunos.",
     desktopImage: "/images/bose.jpg",
     mobileImage: "/images/bose-mobile.jpg",
     slug: "miguel-bose",
+    websiteUrl: "https://miguelbose.com/",
+    aboutImage: "/images/bose-2.jpg",
   },
   {
     id: "flans",
     name: "Flans",
     introText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Somos la agencia de management y ventas de uno de los grupos más queridos y representativos del pop en español. Tras más de 200 shows nacionales e internacionales con Pandora en Inesperado Tour cierran este capítulo para iniciar la celebración de sus 40 años de carrera con un nuevo disco y una gira internacional.",
     aboutHeading: "Sobre Flans",
     aboutText:
-      "Flans es un grupo musical que ha dejado una huella imborrable en la música pop mexicana. Con su estilo único y melodías inolvidables, han conquistado el corazón de millones de fans a lo largo de su exitosa carrera artística.",
+      "Desde sus inicios, el grupo marcó una diferencia al combinar música, moda, coreografías y una imagen fresca que conectó de inmediato con toda una generación convirtiéndolas en un fenómeno juvenil. El álbum Flans (1985) superó las 100 mil copias vendidas y Luz y Sombra (1987) con éxitos como “Las Mil y Una Noches” y “Corre, corre” alcanzó disco de platino. ",
     desktopImage: "/images/flan.jpg",
     mobileImage: "/images/flan-mobile.jpg",
     slug: "flans",
+    aboutImage: "/images/flans-2.jpg",
   },
 ];
 
