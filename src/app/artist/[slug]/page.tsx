@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { getArtistBySlug, getAllArtists } from "@/data/artists";
 import { notFound } from "next/navigation";
 import ArtistAnimations from "@/components/ArtistAnimations";
+import ArtistHeroCarousel from "@/components/ArtistHeroCarousel";
 import { Icon } from "@iconify/react";
 
 interface ArtistPageProps {
@@ -37,19 +38,28 @@ export default async function ArtistPage({ params }: ArtistPageProps) {
         {/* Artist Hero Section - Miguel Bosé Style */}
         <section className="md:px-8 px-4">
           <div className="artist-hero max-w-8xl mx-auto bg-primary h-[640px] rounded-[48px] relative overflow-hidden">
-            <Image
-              src={artist.desktopImage}
-              alt={`${artist.name} Background`}
-              className="w-full h-full object-cover relative! z-0 md:block hidden"
-              fill
-            />
-            <Image
-              src={artist.mobileImage}
-              alt={`${artist.name} Background`}
-              className="w-full h-full object-cover relative! z-0 md:hidden block sm:object-center object-bottom"
-              fill
-            />
-            <div className="artist-hero-text absolute md:bottom-0 bottom-0 left-0 max-w-xl bg-black rounded-tr-4xl sm:p-8 p-4 px-4">
+            {artist.heroImages && artist.heroImages.length > 0 ? (
+              <ArtistHeroCarousel
+                images={artist.heroImages}
+                alt={artist.name}
+              />
+            ) : (
+              <>
+                <Image
+                  src={artist.desktopImage}
+                  alt={`${artist.name} Background`}
+                  className="w-full h-full object-cover relative! z-0 md:block hidden"
+                  fill
+                />
+                <Image
+                  src={artist.mobileImage}
+                  alt={`${artist.name} Background`}
+                  className="w-full h-full object-cover relative! z-0 md:hidden block sm:object-center object-bottom"
+                  fill
+                />
+              </>
+            )}
+            <div className="artist-hero-text absolute md:bottom-0 bottom-0 left-0 max-w-xl bg-black rounded-tr-4xl sm:p-8 p-4 px-4 z-10">
               <h2 className="lg:text-7xl md:text-6xl text-4xl font-roboto-black text-white heading-letterspacing-lg">
                 {artist.name}
               </h2>

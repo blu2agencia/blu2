@@ -9,6 +9,7 @@ export interface Artist {
   slug: string;
   websiteUrl?: string;
   aboutImage?: string;
+  heroImages?: string[];
 }
 
 export const artists: Artist[] = [
@@ -25,6 +26,13 @@ export const artists: Artist[] = [
     slug: "miguel-bose",
     websiteUrl: "https://miguelbose.com/",
     aboutImage: "/images/bose-2.jpg",
+    heroImages: [
+      "/images/boseC-1.jpg",
+      "/images/boseC-2.jpg",
+      "/images/boseC-3.jpg",
+      "/images/boseC-4.jpg",
+      "/images/boseC-5.jpg",
+    ],
   },
   {
     id: "flans",
@@ -38,6 +46,13 @@ export const artists: Artist[] = [
     mobileImage: "/images/flan-mobile.jpg",
     slug: "flans",
     aboutImage: "/images/flans-2.jpg",
+    heroImages: [
+      "/images/flanC-1.jpg",
+      "/images/flanC-2.jpg",
+      "/images/flanC-3.jpg",
+      "/images/flanC-4.jpg",
+      "/images/flanC-5.jpg",
+    ],
   },
 ];
 

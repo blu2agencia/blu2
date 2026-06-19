@@ -25,7 +25,7 @@ export default function Footer() {
             </h3>
             <div className="text-white space-y-2 font-roboto-regular">
               <div className="flex items-center gap-2">
-                <Icon icon="mdi:phone" className="w-4 h-4 text-white" />
+                <Icon icon="mdi:whatsapp" className="w-4 h-4 text-white" />
                 <span className="font-roboto-regular">Próximamente</span>
               </div>
               <div className="flex items-center gap-2">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
@@ -9,6 +9,7 @@ export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTalentoDropdownOpen, setIsTalentoDropdownOpen] = useState(false);
+  const talentoDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +20,26 @@ export default function Navigation() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!isTalentoDropdownOpen) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        talentoDropdownRef.current &&
+        !talentoDropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsTalentoDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isTalentoDropdownOpen]);
+
+  const toggleTalentoDropdown = () => {
+    setIsTalentoDropdownOpen((open) => !open);
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -49,14 +70,21 @@ export default function Navigation() {
 
           <div className="hidden md:flex space-x-8 items-center">
             {/* Talento Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setIsTalentoDropdownOpen(true)}
-              onMouseLeave={() => setIsTalentoDropdownOpen(false)}
-            >
-              <button className="text-white hover:text-white/70 transition-colors font-roboto-regular flex items-center gap-1">
+            <div className="relative" ref={talentoDropdownRef}>
+              <button
+                type="button"
+                onClick={toggleTalentoDropdown}
+                aria-expanded={isTalentoDropdownOpen}
+                aria-haspopup="true"
+                className="text-white hover:text-white/70 transition-colors font-roboto-regular flex items-center gap-1"
+              >
                 Talento
-                <Icon icon="mdi:chevron-down" className="w-4 h-4" />
+                <Icon
+                  icon="mdi:chevron-down"
+                  className={`w-4 h-4 transition-transform ${
+                    isTalentoDropdownOpen ? "rotate-180" : ""
+                  }`}
+                />
               </button>
 
               {/* Dropdown Menu */}
@@ -65,12 +93,14 @@ export default function Navigation() {
                   <Link
                     href="/artist/miguel-bose"
                     className="block px-4 py-2 text-white hover:bg-white/10 transition-colors font-roboto-regular"
+                    onClick={() => setIsTalentoDropdownOpen(false)}
                   >
                     Miguel Bosé
                   </Link>
                   <Link
                     href="/artist/flans"
                     className="block px-4 py-2 text-white hover:bg-white/10 transition-colors font-roboto-regular"
+                    onClick={() => setIsTalentoDropdownOpen(false)}
                   >
                     Flans
                   </Link>

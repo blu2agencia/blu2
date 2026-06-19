@@ -435,7 +435,7 @@ export default function Home() {
                 {/* Teléfono */}
                 <div className="flex items-start gap-4 h-fit">
                   <div className="w-6 h-6 mt-1">
-                    <Icon icon="mdi:phone" className="text-white text-2xl" />
+                    <Icon icon="mdi:whatsapp" className="text-white text-2xl" />
                   </div>
                   <div>
                     <h3 className="text-lg font-roboto-black text-white mb-2">
