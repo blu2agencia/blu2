@@ -19,7 +19,7 @@ export default function Home() {
         <section className="md:px-8 px-4 relative">
           <HeroContainer>
             {/* Background Images */}
-            <div className="absolute inset-0 z-20">
+            <div className="absolute inset-0 z-20 hidden">
               <Image
                 src="/images/hero-1.png"
                 alt="Hero Background"
@@ -30,32 +30,28 @@ export default function Home() {
             </div>
             <div className="absolute inset-0 z-0">
               <Image
-                src="/images/hero-2.jpg"
+                src="/images/home-alt.jpg"
                 alt="Hero Background"
                 className="w-full h-full object-cover"
                 fill
+                priority
               />
             </div>
 
-            <div className="md:text-left text-center mb-16 relative z-10 xl:mt-20 lg:mt-24 md:mt-32 mt-20">
+            <div className="md:text-left text-center mb-16 relative z-10 xl:mt-20 lg:mt-24 md:mt-32 mt-20 px-4 md:px-0">
               <h1
                 data-scroll-speed="-0.5"
                 className="xl:text-[12.5rem] lg:text-[9rem] md:text-[6rem] text-[6.4rem] xl:leading-[12rem] lg:leading-[9rem] md:leading-[6rem] leading-[5rem] font-roboto-black text-white heading-letterspacing-3xl"
               >
                 vive la música
               </h1>
-              <p className="text-lg font-roboto-regular text-white xl:max-w-lg lg:max-w-96 md:max-w-72 max-w-none leading-relaxed text-left hidden md:block">
+              <p className="text-lg font-roboto-regular text-white xl:max-w-lg lg:max-w-96 md:max-w-72 max-w-none leading-relaxed text-center md:text-left mt-6 md:mt-0">
                 Nuestra especialidad es entregar una solución llaves en mano
                 para necesidades de producción, marketing, hospitalidad y
                 contratación de artistas.
               </p>
             </div>
           </HeroContainer>
-          <p className="text-white text-lg leading-relaxed text-left block md:hidden  relative z-30 -mt-20">
-            Nuestra especialidad es entregar una solución llaves en mano para
-            necesidades de producción, marketing, hospitalidad y contratación de
-            artistas.
-          </p>
         </section>
 
         {/* Stats Bar */}
