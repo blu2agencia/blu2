@@ -30,7 +30,7 @@ export default function Home() {
             </div>
             <div className="absolute inset-0 z-0">
               <Image
-                src="/images/hero-2.png"
+                src="/images/hero-2.jpg"
                 alt="Hero Background"
                 className="w-full h-full object-cover"
                 fill
@@ -101,7 +101,10 @@ export default function Home() {
         </section>
 
         {/* About Us Section */}
-        <section className="md:px-8 px-4 py-16 relative">
+        <section
+          id="nosotros"
+          className="md:px-8 px-4 py-16 relative scroll-mt-24"
+        >
           {/* Gradient BG */}
           <div className="bg-[#1A18E8]/60 w-[500px] h-[500px] absolute -bottom-40 right-0 blur-[400px] z-0"></div>
 
@@ -139,7 +142,10 @@ export default function Home() {
         </section>
 
         {/* Artist Spotlight - Miguel Bosé */}
-        <section className="md:px-8 px-4 md:py-24 py-16 relative">
+        <section
+          id="talento"
+          className="md:px-8 px-4 md:py-24 py-16 relative scroll-mt-24"
+        >
           <div className="artist-spotlight max-w-7xl mx-auto bg-primary h-[640px] rounded-[48px] relative overflow-hidden z-10">
             <Image
               src="/images/bose.jpg"
@@ -218,7 +224,7 @@ export default function Home() {
           {/* Gradient BG */}
           <div className="bg-[#1A18E8]/70 w-[500px] h-[500px] absolute top-20 left-0 blur-[400px] z-0"></div>
 
-          <div className="artist-spotlight max-w-7xl mx-auto bg-amber-50 h-[640px] rounded-[48px] relative overflow-hidden">
+          <div className="artist-spotlight max-w-7xl mx-auto bg-amber-50 h-[740px] rounded-[48px] relative overflow-hidden">
             <Image
               src="/images/flan.jpg"
               alt="About Us"
@@ -228,7 +234,7 @@ export default function Home() {
             <Image
               src="/images/flan-mobile.jpg"
               alt="About Us"
-              className="w-full h-full object-cover relative! z-0 md:hidden block -mt-16"
+              className="w-full h-full object-cover object-[58%_top] relative! z-0 md:hidden block -mt-6"
               fill
             />
             <div className="lg:max-w-lg max-w-md bg-black md:rounded-bl-4xl rounded-bl-none md:rounded-br-none rounded-br-4xl md:p-8 p-4 absolute z-20 top-0 md:right-0">
@@ -291,7 +297,10 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="md:px-8 px-4 md:py-16 py-16 relative">
+        <section
+          id="servicios"
+          className="md:px-8 px-4 md:py-16 py-16 relative scroll-mt-24"
+        >
           {/* Gradient BG */}
           <div className="bg-[#1A18E8]/70 w-[500px] h-[500px] absolute -bottom-40 right-0 blur-[400px] z-0"></div>
 
@@ -387,7 +396,10 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="md:px-8 px-4 py-16 relative">
+        <section
+          id="contact"
+          className="md:px-8 px-4 py-16 relative scroll-mt-24"
+        >
           {/* Gradient BG */}
           <div className="bg-[#1A18E8]/60 w-[500px] h-[500px] absolute -bottom-20 left-0 blur-[400px] z-0"></div>
 

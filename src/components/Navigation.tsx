@@ -3,9 +3,17 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 export default function Navigation() {
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHomepage = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTalentoDropdownOpen, setIsTalentoDropdownOpen] = useState(false);
@@ -49,6 +57,50 @@ export default function Navigation() {
     setIsMobileMenuOpen(false);
   };
 
+  const scrollToSection = (sectionId: string, onComplete?: () => void) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      gsap.to(window, {
+        duration: 1.5,
+        scrollTo: { y: section, offsetY: 80 },
+        ease: "power3.inOut",
+        onComplete,
+      });
+    }
+  };
+
+  const navigateToSection = (sectionId: string, onComplete?: () => void) => {
+    if (isHomepage) {
+      scrollToSection(sectionId, onComplete);
+      window.history.replaceState(null, "", `#${sectionId}`);
+    } else {
+      onComplete?.();
+      router.push(`/#${sectionId}`);
+    }
+  };
+
+  useEffect(() => {
+    if (pathname !== "/") return;
+
+    const scrollFromHash = () => {
+      const sectionId = window.location.hash.slice(1);
+      if (!sectionId) return;
+
+      window.setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 150);
+    };
+
+    scrollFromHash();
+    window.addEventListener("hashchange", scrollFromHash);
+    return () => window.removeEventListener("hashchange", scrollFromHash);
+  }, [pathname]);
+
+  const navLinkClass =
+    "text-white hover:text-white/70 transition-colors font-roboto-regular";
+  const mobileNavLinkClass =
+    "text-white text-2xl font-roboto-black hover:text-white/70 transition-colors";
+
   return (
     <>
       <nav
@@ -76,7 +128,7 @@ export default function Navigation() {
                 onClick={toggleTalentoDropdown}
                 aria-expanded={isTalentoDropdownOpen}
                 aria-haspopup="true"
-                className="text-white hover:text-white/70 transition-colors font-roboto-regular flex items-center gap-1"
+                className={`${navLinkClass} flex items-center gap-1`}
               >
                 Talento
                 <Icon
@@ -108,18 +160,21 @@ export default function Navigation() {
               )}
             </div>
 
-            <a
-              href="#"
-              className="text-white hover:text-white/70 transition-colors font-roboto-regular"
+            <button
+              type="button"
+              onClick={() => navigateToSection("nosotros")}
+              className={navLinkClass}
             >
               Eventos
-            </a>
-            <a
-              href="#"
-              className="text-white hover:text-white/70 transition-colors font-roboto-regular"
+            </button>
+
+            <button
+              type="button"
+              onClick={() => navigateToSection("servicios")}
+              className={navLinkClass}
             >
               Servicios
-            </a>
+            </button>
           </div>
 
           <div className="hidden md:block">
@@ -186,7 +241,13 @@ export default function Navigation() {
         <div className="flex-1 flex flex-col justify-center items-center space-y-8 px-6">
           {/* Talento with submenu */}
           <div className="flex flex-col items-center space-y-4">
-            <div className="text-white text-2xl font-roboto-black">Talento</div>
+            <button
+              type="button"
+              onClick={() => navigateToSection("talento", closeMobileMenu)}
+              className={mobileNavLinkClass}
+            >
+              Talento
+            </button>
             <div className="flex flex-col items-center space-y-3">
               <Link
                 href="/artist/miguel-bose"
@@ -205,20 +266,21 @@ export default function Navigation() {
             </div>
           </div>
 
-          <a
-            href="#"
-            className="text-white text-2xl font-roboto-black hover:text-white/70 transition-colors"
-            onClick={closeMobileMenu}
+          <button
+            type="button"
+            onClick={() => navigateToSection("nosotros", closeMobileMenu)}
+            className={mobileNavLinkClass}
           >
             Eventos
-          </a>
-          <a
-            href="#"
-            className="text-white text-2xl font-roboto-black hover:text-white/70 transition-colors"
-            onClick={closeMobileMenu}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => navigateToSection("servicios", closeMobileMenu)}
+            className={mobileNavLinkClass}
           >
             Servicios
-          </a>
+          </button>
 
           <div className="pt-8">
             <a
